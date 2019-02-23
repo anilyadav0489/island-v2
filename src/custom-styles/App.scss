@@ -1,0 +1,14 @@
+@import 'Game.scss';
+@import 'IslandCountSetter.scss';
+@import 'Navbar.scss';
+@import 'Island.scss';
+
+*{
+    box-sizing: border-box;
+}
+.App{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#8888ff, #0000ff);
+}

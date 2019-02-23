@@ -1,0 +1,63 @@
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-left{
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.hamburger{
+    display: inline-block;
+    width: 35px;
+}
+.hamburger-strip{
+    margin: 7px;
+    width: 30px;
+    height: 4px;
+    border-radius: 1px;
+    border: 2px solid white;
+}
+.app-name{
+    display: inline-block;
+    color: white;
+    padding: 0 15px;
+}
+
+.navbar-right{
+    display: flex;
+    width: 500px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rules {
+    color: #888888;
+    padding: 0 40px;
+    cursor: pointer;
+}
+.rules:hover, .rules:focus{
+    color: white;
+}
+.versions {
+    color: #888888;
+    padding: 0 40px;
+    cursor: pointer;
+}
+.versions:hover, .versions:focus{
+    color: white;
+}
+
+.author{
+    color: #888888;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.author:hover, .author:focus{
+    color: white;
+}

@@ -25,7 +25,7 @@ class NavBar extends Component {
                 <div className="navbar-right">
                     <div className="rules" onClick={this.updateScreenName}>Rules</div>
                     <div className="versions" title="Version 1" onClick={this.openOldVersion}>Old Version</div>
-                    <div className="author" title='Anil Yadav' onClick={this.openLinkedInProfile}>About the author</div>
+                    <div className="author" title='Anil Yadav' onClick={this.openLinkedInProfile}>Author</div>
                 </div>
             </div>
         );

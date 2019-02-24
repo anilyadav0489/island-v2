@@ -18,7 +18,6 @@ class Island extends Component {
         }
     }
     render() {
-        let initialValue= this.props.area;
         let styleClass='island-area ' + this.props.istate;
         return (
             <div className="island" onClick={this.onSelection}>

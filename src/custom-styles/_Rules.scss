@@ -39,3 +39,14 @@
 
       }
   }
+
+  @media screen and (max-width: 770px) {
+    .instructions{
+      width: 80%;
+    }
+    
+    .instructions-text{
+      font-size: 0.9rem;
+    }
+    
+  }

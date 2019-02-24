@@ -2,7 +2,6 @@
 export function getTheIndex(islands){
     var myBucket = [];
     var hisBucket = [];
-    let iteration = 0;
     let finalIndex = getTheBest(islands, true, myBucket, hisBucket);
     console.log('final value returned'+ finalIndex)
     return finalIndex;
@@ -25,19 +24,16 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
         let myT2 = []; 
         let hisT1 = [];
         let hisT2 = [];
-        let returnedNum = -1;
         
         if(myTurn) {
             if(islands.length === 2) {
                 if(islands[0]> islands[1]) {
                     myBucket.push(islands[0]);
                     hisBucket.push(islands[1]);
-                    returnedNum =  islands[0];
                     index = 0;
                 }else {
                     myBucket.push(islands[1]);
                     hisBucket.push(islands[0]);
-                    returnedNum = islands[1];
                     index = 1;
                 }
             }
@@ -136,12 +132,10 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
                 if(islands[0]> islands[1]) {
                     hisBucket.push(islands[0]);
                     myBucket.push(islands[1]);
-                    returnedNum = islands[0];
                     index = 0;
                 }else {
                     hisBucket.push(islands[1]);
                     myBucket.push(islands[0]);
-                    returnedNum = islands[1];
                     index = 1;
                 }
             }

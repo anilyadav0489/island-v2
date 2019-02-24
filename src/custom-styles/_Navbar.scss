@@ -58,6 +58,45 @@
     cursor: pointer;
     padding: 0 10px;
 }
+@media screen and (min-width: 769px){
+    .author::before{
+        content: 'About the ';
+    }
+}
 .author:hover, .author:focus{
     color: white;
+}
+
+@media screen and (max-width: 770px){
+    .navbar-left{
+        width: 200px;
+    }
+    .hamburger{
+        display: inline-block;
+        width: 30px;
+    }
+    .hamburger-strip{
+        margin: 5px 10px;
+        width: 25px;
+        border: 1.5px solid white;
+    }
+    .app-name{
+        padding: 0 0 0 10px;
+        font-size: .9rem;
+        width: 100px;
+    }
+    
+    .rules {
+        padding: 0 10px;
+        font-size: 0.9rem;
+    }
+    .versions {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+    .author{
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+    
 }

@@ -21,7 +21,7 @@ class Game extends Component {
         this.showResetButton = true;
         this.islandAreas = [];
         this.islandState = []; //selected, selectable, unselectable 
-        this.message = 'Your turn: Please select either of beating islands.'
+        this.message = 'Your turn: \nPlease select either of beating islands.'
     }
     
     resetValues=()=>{
@@ -30,7 +30,7 @@ class Game extends Component {
             this.islandState[0] = 'SELECTABLE'
             this.islandState[this.islandState.length - 1] = 'SELECTABLE'
             this.setState({resetButtonText: 'Reset Values'});
-            this.message = 'Your turn: Please select either of beating islands.'
+            this.message = 'Your turn: \nPlease select either of beating islands.'
         }
         else {
             this.islandState = this.islandState.map(()=> 'EDITING');
@@ -55,7 +55,7 @@ class Game extends Component {
         });
         this.islandAreas = [];
         this.islandState = [];
-        this.message = 'Your turn: Please select either of beating islands.'
+        this.message = 'Your turn: \nPlease select either of beating islands.'
     }
     showGameScreen=()=>{
         this.setState({
@@ -81,7 +81,7 @@ class Game extends Component {
         this.islandState[id] = 'SELECTED';
         this.showResetButton = false;
         if(this.state.userTurn){
-            this.message="Computer's turn: Thinking....."
+            this.message="Computer's turn: \nThinking....."
             setTimeout(()=>{
                 this.makeSelectionByComputer();
             },3000);
@@ -115,10 +115,10 @@ class Game extends Component {
             } else if (this.state.playerBucket < this.state.computerBucket){
                 this.message="You lose. Better luck next time."
             } else {
-                this.message="Game drawn: You played well though."
+                this.message="Game drawn: \nYou played well though."
             }
         } else {
-            this.message="Your turn: Please select either of beating islands."
+            this.message="Your turn: \nPlease select either of beating islands."
         }
         if(id === 0){
             this.setState((prevState)=>{
@@ -168,19 +168,33 @@ class Game extends Component {
                 {this.state.currentScreen === 'SELECTION' ? <IslandCountSetter updateGameState={this.updateGameState} showGameScreen={this.showGameScreen} setTotalIslands={this.setTotalIslands}/> : null}
                 {this.state.currentScreen === 'GAME' ? (
                     <div className="play-area">
-                        <div className="bucket-title-common">Area Grabbed by</div>
-                        <div className="bucket-title-you">You</div>
-                        <div className="player-bucket">{this.state.playerBucket}</div>
-                        <div className="bucket-title-computer">Computer</div>
-                        <div className="computer-bucket">{this.state.computerBucket}</div>
-                        <div className="islands">{islands}</div>
-                        {this.showResetButton ? (<input type='button' className="reset-button" 
-                        value={this.state.resetButtonText} onClick={this.resetValues}></input>) : null}
-                        <input type='button' className="restart-button" 
-                            value='Restart Game' onClick={this.restartGame}></input>
+                        <div className="score-section">
+                            <div className="score-top-section">
+                                <div className="bucket-title-common">Area Grabbed by</div>
+                            </div>
+                            <div className="score-middle-section">
+                                <div className="bucket-title-you">You</div>
+                                <div className="bucket-title-computer">Computer</div>
+                            </div>
+                            <div className="score-bottom-section">
+                                <div className="player-bucket">{this.state.playerBucket}</div>
+                                <div className="computer-bucket">{this.state.computerBucket}</div>
+                            </div>
+                        </div>
+                        <div className="island-section">
+                            <div className="islands">{islands}</div>
+                        </div>
                         <div className="message">{this.message}</div>
-                    </div>): null }
-                {/** <img src={islandsBackgroundImage} alt="island background" className="bg-image"/>*/}
+                        <div className="buttons-section">
+                            {this.showResetButton ? (<input type='button' className="reset-button" 
+                                value={this.state.resetButtonText} onClick={this.resetValues}></input>) : null}
+                            <input type='button' className="restart-button" 
+                                value='Restart Game' onClick={this.restartGame}></input>
+                        </div>
+                    </div>
+                    ): null
+                }
+                        
             </div>
         )
     }

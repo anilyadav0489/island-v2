@@ -1,13 +1,17 @@
-var islands = [4,3,1,5];
-var myBucket = [];
-var hisBucket = [];
 
-let best = getTheBest(islands, true, myBucket, hisBucket);
-console.log(best);
+export function getTheIndex(islands){
+    var myBucket = [];
+    var hisBucket = [];
+    let iteration = 0;
+    let finalIndex = getTheBest(islands, true, myBucket, hisBucket);
+    console.log('final value returned'+ finalIndex)
+    return finalIndex;
+};
 
 function getTheBest(islands, myTurn, myBucket, hisBucket){
+    let index=0;
     if(islands.length === 1){
-        return islands[0];
+        return 0;
     } else {
         let myLeft = 0;
         let myRight = 0;
@@ -24,7 +28,7 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
         let returnedNum = -1;
         
         if(myTurn) {
-            if(islands.length == 2) {
+            if(islands.length === 2) {
                 if(islands[0]> islands[1]) {
                     myBucket.push(islands[0]);
                     hisBucket.push(islands[1]);
@@ -103,7 +107,7 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
                         index = islands.length-1;
                         return index;//myRight;//x2;
                     }
-                }else if(x1==y1) {
+                }else if(x1 === y1) {
                     if(x2>y2) {
                         myBucket.push(...myT2);
                         hisBucket.push(...hisT2);
@@ -128,7 +132,7 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
         }
         ////////////////////// not my turn
         else {
-            if(islands.length == 2) {
+            if(islands.length === 2) {
                 if(islands[0]> islands[1]) {
                     hisBucket.push(islands[0]);
                     myBucket.push(islands[1]);
@@ -208,7 +212,7 @@ function getTheBest(islands, myTurn, myBucket, hisBucket){
                         index = islands.length-1;
                         return index;//hisRight;//x2;
                     }
-                }else if(x1==y1) {
+                }else if(x1 === y1) {
                     if(x2>y2) {
                         myBucket.push(...myT2);
                         hisBucket.push(...hisT2);

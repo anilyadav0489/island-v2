@@ -10,15 +10,16 @@ class IslandCountSetter extends Component {
 
     setTotalIslands=(count)=>{
         setTimeout(()=>{
+            this.props.updateGameState('RUNNING');
             this.props.setTotalIslands(count);
-        }, 500);
+        }, 400);
     }
     render() {
         return ( 
         <div className="popup">
             <div className="popup-header">{`Select Islands`}</div>
             <div className="popup-body">
-                <div className="body-text">Select the circle for the number of islands you want to begin with.</div>
+                <div className="body-text">Select the number of islands you want to begin with.</div>
                 <div className="button-section">
                     <button className="div-circle" onClick={()=>this.setTotalIslands(2)}>2</button>
                     <button className="div-circle" onClick={()=>this.setTotalIslands(4)}>4</button>

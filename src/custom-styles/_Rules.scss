@@ -1,0 +1,41 @@
+.instructions{
+    box-shadow: 0 0 50px black;
+    margin: -2rem 0 0 0;
+    width: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: bring-up 2s ease forwards;
+}
+  
+  .instructions-text{
+    margin: 2rem;
+    font-style: italic;
+    border-width: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+  }
+  .instructions button{
+    font-style: bold;
+    background: #2199e8;
+    border: none;
+    height: 35px;
+    width: 80%;
+    margin: 30px 0;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+  }
+  
+  @keyframes bring-up{
+      0%{
+        background-color: #333333;
+    }
+    100%{
+        background-color: white;
+
+      }
+  }

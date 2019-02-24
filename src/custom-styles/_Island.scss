@@ -11,20 +11,32 @@
     height: 80px;
     font-size: 35px;
     text-align: center;
-    user-select: none;
     cursor: pointer;
     outline: none;
-    caret-color: transparent;
 }
 .island-area::selection{
     background-color: transparent;
 }
-
+.EDITING.island-area::selection{
+    cursor: auto;
+    background-color: #dddddd;
+}
+.SELECTED{
+    user-select: none;
+    caret-color: transparent;
+    cursor: no-drop;
+    background-color: #888888;
+}
 .SELECTABLE{
+    caret-color: transparent;
+    user-select: none;
     animation: pulse 1s ease ;
     animation-iteration-count: infinite;
 }
-.SELECTED{
+.UNSELECTABLE{
+    caret-color: transparent;
+    user-select: none;
+    cursor: no-drop;
 }
 
 @keyframes pulse {

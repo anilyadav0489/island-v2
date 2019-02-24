@@ -1,12 +1,11 @@
 .popup{
-    position: fixed;
+    position: absolute;
     width: 40rem;
-    height: 50vh;
-    left: 25vw;
-    top: 22vh;
+    height: 15rem;
+    left: calc((100vw - 40rem)/2);
+    top: 7rem;
     border: rgb(10, 200, 10);
     border-radius: 20px 20px 0 0;
-    opacity: 1;
 }
 
 .popup-header{
@@ -14,7 +13,7 @@
     position: relative;
     width: 100%;
     height: 50px;
-    background: rgb(10, 200, 10);
+    background: linear-gradient(#8888ff, #0000ff);
     color: white;
     padding: 13px 20px;
     font-size: 18px;
@@ -25,7 +24,6 @@
     align-content: center;
     flex-direction: column;
     border-radius: 0 0 20px 20px;
-    border: 1px solid rgb(10, 200, 10);
     position: relative;
     width: 100%;
     height: 280px;
@@ -37,16 +35,22 @@
     padding: 20px 25px;
     margin-bottom: 25px;
 }
+.button-section {
+    display: flex;
+    justify-content: space-evenly;
+}
 .div-circle {
     position: relative;
     display: table-cell;
-    width: 65px;
-    height: 65px;
+    width: 95px;
+    height: 95px;
     text-align: center;
     vertical-align: middle;
+    border: 1px solid #0000ff;
     border-radius: 50%;
-    margin: 20px 30px;
-    color: rgb(100, 100, 50);
+    color: white;
+    box-shadow: 5px 10px 8px 5px #888888;
+    background: radial-gradient(#8888ff, #0000ff);
     font-size: 2rem;
     cursor: pointer;
     outline: none;
@@ -54,18 +58,6 @@
 }
 
 .div-circle:focus {
-    background: pink;
+    background: #2d699b;
 }
-.div-circle::after {
-    cursor: pointer;
-    content: " ";
-    position: absolute;
-    top:-22px;
-    left: -22px;
-    width: 65px;
-    height: 65px;
-    border: 20px solid #ffea00;
-    border-radius: 50%;
-    z-index: 1;
-  }
 
